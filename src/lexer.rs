@@ -165,7 +165,7 @@ impl Lexer {
                         
                         // Change the mode
                         line_tokens[1] = Token::Mode(InstructionMode::BaseOffset);
-                    }else{
+                    } else {
                         // This is a register indirect
                         last_value = last_value.replace("R", "");
                         let register = match utils::register_to_byte(&last_value){
@@ -177,7 +177,7 @@ impl Lexer {
                         // Change the mode
                         line_tokens[1] = Token::Mode(InstructionMode::RegisterIndirect);
                     }
-                }else{
+                } else {
                     // Check it's a value. We can do this by attempting to convert it to a u32
                     match utils::string_to_u32(&last_value){
                         Some(value) =>  {
