@@ -1,5 +1,5 @@
-use crate::{utils::register_to_byte, token::Token, instructions::InstructionMode};
-use super::{Instructions, Lexer, utils};
+use crate::{token::Token, instructions::InstructionMode};
+use super::{Instructions, Lexer};
     
 #[derive(Debug)]
 pub struct ASTNode {
@@ -11,7 +11,7 @@ pub struct ASTNode {
 
 impl ASTNode {
     pub fn new(op_code: Instructions, mode: InstructionMode, args: Vec<u32>) -> Self {
-        let mut token_repr = String::from(op_code);
+        let token_repr = String::from(op_code);
         
         Self {
             op_code,
