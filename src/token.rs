@@ -8,6 +8,7 @@ pub enum Token{
     Register(u32),
     BaseOffset(u32, u32),
     Value(u32),
-    Memory(u32),
+    //Memory(u32),
     Label(String),
+    None,
 }
